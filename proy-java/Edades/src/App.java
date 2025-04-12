@@ -2,7 +2,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        int opc,ed[],ma[],me[],pa[],im[],n=0,sw=0;
+        int opc, ed[], ma[], me[], pa[], im[], n=0, sw=0;
         ed = new int[100];
         ma = new int[100];
         me = new int[100];
