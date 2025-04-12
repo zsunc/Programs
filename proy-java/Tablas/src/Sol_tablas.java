@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 public class Sol_tablas {
     Scanner inf = new Scanner(System.in);

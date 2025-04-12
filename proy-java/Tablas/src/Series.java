@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 public class Series {
     Sol_series sol=new Sol_series();

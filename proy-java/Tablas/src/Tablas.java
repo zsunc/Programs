@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 public class Tablas {
     Sol_tablas sol= new Sol_tablas();
