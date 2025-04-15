@@ -1,7 +1,7 @@
 import java.util.*;
 public class App {
     public static void main(String[] args) {
-        int opc,ed[],pa[],im[],n=0,sw=0,max,min,rg[],pr[];
+        int opc,ed[],pa[],im[],n=0,sw=0,max=0,min=0,rg[],pr[];
         ed = new int[100];
         pa = new int[100];
         im = new int[100];
@@ -31,6 +31,11 @@ public class App {
                 case 2:
                     if(sw == 1){
                     sol.ingreso(n, ed);
+                    System.out.print("\n-- INGRESE RANGO DE EDADES --\n");
+                    System.out.print("\nINGRESE LA EDAD MINIMA ->");
+                    min = dat.nextInt();
+                    System.out.print("\nINGRESE LA EDAD MAXIMA ->");
+                    max = dat.nextInt();
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }
@@ -62,14 +67,14 @@ public class App {
                     break;
                 case 6:
                     if(sw == 1){
-                    sol.pasar(n, ed, pa, im);
+                    sol.pasar(n, min, max, ed, pa, im);
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }
                     break;
                 case 7:
                     if(sw == 1){
-                   sol.primos(n, ed, pr);
+                   sol.primos(n, min, max, ed, pr);
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }

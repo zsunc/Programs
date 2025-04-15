@@ -55,19 +55,21 @@ public class Solucion {
         }
         System.out.print("\n\nLA SUMA ES: "+s+"\n");
     }
-    void pasar(int n, int ed[], int pa[], int im[]){
-        int i;
+    void pasar(int n, int min, int max, int ed[], int pa[], int im[]){
+        int i, ri=0, rp=0;
         for(i=0; i<n; i++){
-            if(ed[i]%2==0){
-            pa[i]=ed[i];
-            } else {
-                im[i]=ed[i];
+            if(ed[i]>=min && ed[i] <= max){
+                if(ed[i]%2==0){
+                pa[rp++]=ed[i];
+                } else {
+                    im[ri++]=ed[i];
+                }
             }
         }
-        System.out.print("\n-- EDADES PARES --\n");
-        verimpa(n, pa);
-        System.out.print("\n-- EDADES IMPARES --\n");
-        verimpa(n, im);
+        System.out.print("\n-- EDADES PARES EN EL RANGO --\n");
+        verimpa(rp, pa);
+        System.out.print("\n-- EDADES IMPARES EN EL RANGO --\n");
+        verimpa(ri, im);
     }
     int prim(int x){
         int i=0, sw=1;
@@ -83,15 +85,16 @@ public class Solucion {
         }
         return (sw); 
     }
-    void primos(int n, int ed[], int pri[]){
+    void primos(int n, int min, int max, int ed[], int pri[]){
         int i, j = 0;
         for(i = 0; i < n; i++){
-            if(prim(ed[i]) == 1){
-                pri[j] = ed[i]; // Guarda la edad si es primo
-                j++;
+            if(ed[i]>= min && ed[i]<= max){
+                if(prim(ed[i]) == 1){
+                    pri[j++] = ed[i];
+                }
             }
         }
-        System.out.print("\n-- EDADES PRIMAS --\n");
+        System.out.print("\n-- EDADES PRIMAS EN EL RANGO --\n");
         verimpa(j, pri);
     }
     void filtar(int n,int ed[], int rg[], int min, int max){
