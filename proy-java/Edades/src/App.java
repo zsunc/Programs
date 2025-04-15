@@ -1,19 +1,23 @@
 import java.util.*;
 public class App {
     public static void main(String[] args) {
-        int opc,ed[],pa[],im[],n=0,sw=0;
+        int opc,ed[],pa[],im[],n=0,sw=0,max,min,rg[],pr[];
         ed = new int[100];
         pa = new int[100];
         im = new int[100];
+        pr = new int[100];
+        rg = new int[100];
         Solucion sol = new Solucion();
         Scanner dat = new Scanner(System.in);
         do{
         System.out.print("\n\n1. DIMENSION");
         System.out.print("\n2. INGRESAR EDADES");
-        System.out.print("\n3. VER");
-        System.out.print("\n4. ORDENAR EDADES");
-        System.out.print("\n5. CREAR VECTORES");
-        System.out.print("\n6. SALIR");
+        System.out.print("\n3. FILTRAR POR EDAD");
+        System.out.print("\n4. VER");
+        System.out.print("\n5. ORDENAR EDADES");
+        System.out.print("\n6. CREAR VECTOR DIGITOS (PAR/IMPAR)");
+        System.out.print("\n7. CREAR VECTOR DIGITOS PRIMOS");
+        System.out.print("\n8. SALIR");
         System.out.print("\n\n    ELIJA UNA OPCION ->");
         opc = dat.nextInt();
             switch (opc) {
@@ -32,28 +36,46 @@ public class App {
                     }
                     break;
                 case 3:
-                    if(sw == 1){
-                    sol.ver(n, ed);
+                    if(sw==1){
+                        System.out.print("\nINGRESE EDAD MINIMA: ");
+                        min = dat.nextInt();                        
+                        System.out.print("\nINGRESE EDAD MAXIMA: ");
+                        max = dat.nextInt();
+                        sol.filtar(n, ed, rg, min, max);
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }
                     break;
                 case 4:
                     if(sw == 1){
-                    sol.ordenar(n, ed);
+                    sol.ver(n, ed);
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }
                     break;
                 case 5:
                     if(sw == 1){
+                    sol.ordenar(n, ed);
+                    } else {
+                        System.out.print("\nEL VECTOR NO TIENE DIMENSION");
+                    }
+                    break;
+                case 6:
+                    if(sw == 1){
                     sol.pasar(n, ed, pa, im);
                     } else {
                         System.out.print("\nEL VECTOR NO TIENE DIMENSION");
                     }
                     break;
+                case 7:
+                    if(sw == 1){
+                   sol.primos(n, ed, pr);
+                    } else {
+                        System.out.print("\nEL VECTOR NO TIENE DIMENSION");
+                    }
+                    break;
             }
-        } while(opc != 6);
+        } while(opc != 8);
         dat.close();
     }
 }

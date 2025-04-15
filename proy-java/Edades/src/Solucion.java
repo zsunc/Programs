@@ -69,4 +69,43 @@ public class Solucion {
         System.out.print("\n-- EDADES IMPARES --\n");
         verimpa(n, im);
     }
+    int prim(int x){
+        int i=0, sw=1;
+        if(x==1 || x==2){
+            sw=1;
+        } else {
+            for (i=2; i<x; i++){
+                if (x%i ==0){
+                    sw=0;
+                    break;
+                }
+            }
+        }
+        return (sw); 
+    }
+    void primos(int n, int ed[], int pri[]){
+        int i, j = 0;
+        for(i = 0; i < n; i++){
+            if(prim(ed[i]) == 1){
+                pri[j] = ed[i]; // Guarda la edad si es primo
+                j++;
+            }
+        }
+        System.out.print("\n-- EDADES PRIMAS --\n");
+        verimpa(j, pri);
+    }
+    void filtar(int n,int ed[], int rg[], int min, int max){
+        System.out.print("\n-- EDADES DENTRO DEL RANGO ["+min+" - "+max+"] --");
+        int i,s=0;
+        for(i=0; i<n; i++){
+            if(ed[i]>= min && ed[i] <= max){
+            rg[i]=ed[i];
+            s+=ed[i];
+            System.out.print("\n   ~ "+ed[i]);
+            } else {
+                rg[i]=0;
+            }
+        }
+        System.out.print("\n LA SUMA DE EDADES EN EL RANGO ES: "+s);
+    }
 }
