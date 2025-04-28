@@ -21,7 +21,7 @@ public class App {
                     break;
                 case 5: sol.vibora(n, ma);
                     break;
-                case 6: sol.sertact(n, ma);
+                case 6: sol.seriefact(n, ma);
                     break;
             }
         } while(op != 7);
