@@ -27,20 +27,14 @@ public class Sistema {
             u.sig=p;
             p=u;
             }
-            dat=JOptionPane.showInputDialog("ESCRIBA 'FIN' PARA FINALIZAR");
+            dat=JOptionPane.showInputDialog("ESCRIBA 'FIN' PARA FINALIZAR","FIN");
     } while(dat.compareTo("FIN")!=0);
     return (p);
     }
     void ver(Ingeniero x){
         String cad="";
         while(x!=null){
-            cad=cad+"MATRICULA: "+x.ma+"\n";
-            cad=cad+"NOMBRE: "+x.nom+"\n";
-            cad=cad+"DIRECCION: "+x.dir+"\n";
-            cad=cad+"ESPECIALIDAD: "+x.esp+"\n";
-            cad=cad+"CELULAR: "+x.cel+"\n";
-            cad=cad+"GRADO: "+x.gr+"\n";
-            cad=cad+"\n";
+            cad=cad+"MATRICULA: "+x.ma+"\n"+"NOMBRE: "+x.nom+"\n"+"DIRECCION: "+x.dir+"\n"+"ESPECIALIDAD: "+x.esp+"\n"+"CELULAR: "+x.cel+"\n"+"GRADO: "+x.gr+"\n"+"\n";
             x=x.sig;
         }
         JOptionPane.showMessageDialog(null,"SOCIEDAD DE INGENIEROS - ORURO\n"+cad);
@@ -50,12 +44,7 @@ public class Sistema {
         aux=JOptionPane.showInputDialog(null, "INGRESE LA ESPECIALIDAD A BUSCAR");
         while(x!=null){
             if(aux.compareTo(x.esp)==0){
-                cad="MATRICULA: "+x.ma+"\n";
-                cad=cad+"NOMBRE: "+x.nom+"\n";
-                cad=cad+"DIRECCION: "+x.dir+"\n";
-                cad=cad+"ESPECIALIDAD: "+x.esp+"\n";
-                cad=cad+"CELULAR: "+x.cel+"\n";
-                cad=cad+"GRADO: "+x.gr+"\n";
+                cad="MATRICULA: "+x.ma+"\n"+"NOMBRE: "+x.nom+"\n"+"DIRECCION: "+x.dir+"\n"+"ESPECIALIDAD: "+x.esp+"\n"+"CELULAR: "+x.cel+"\n"+"GRADO: "+x.gr+"\n";
             }
             x=x.sig;
         }
@@ -66,12 +55,7 @@ public class Sistema {
         aux=JOptionPane.showInputDialog(null, "INGRESE LA ESPECIALIDAD A BUSCAR");
         while(x!=null){
             if(aux.compareTo(x.gr)==0){
-                cad="MATRICULA: "+x.ma+"\n";
-                cad=cad+"NOMBRE: "+x.nom+"\n";
-                cad=cad+"DIRECCION: "+x.dir+"\n";
-                cad=cad+"ESPECIALIDAD: "+x.esp+"\n";
-                cad=cad+"CELULAR: "+x.cel+"\n";
-                cad=cad+"GRADO: "+x.gr+"\n";
+                cad="MATRICULA: "+x.ma+"\n"+"NOMBRE: "+x.nom+"\n"+"DIRECCION: "+x.dir+"\n"+"ESPECIALIDAD: "+x.esp+"\n"+"CELULAR: "+x.cel+"\n"+"GRADO: "+x.gr+"\n";
             }
             x=x.sig;
         }
@@ -84,51 +68,35 @@ public class Sistema {
         num=Integer.parseInt(aux);
         while(x!=null){
             if(num==x.cel){
-                cad="MATRICULA: "+x.ma+"\n";
-                cad=cad+"NOMBRE: "+x.nom+"\n";
-                cad=cad+"DIRECCION: "+x.dir+"\n";
-                cad=cad+"ESPECIALIDAD: "+x.esp+"\n";
-                cad=cad+"CELULAR: "+x.cel+"\n";
-                cad=cad+"GRADO: "+x.gr+"\n";
+                cad="MATRICULA: "+x.ma+"\n"+"NOMBRE: "+x.nom+"\n"+"DIRECCION: "+x.dir+"\n"+"ESPECIALIDAD: "+x.esp+"\n"+"CELULAR: "+x.cel+"\n"+"GRADO: "+x.gr+"\n";
             }
             x=x.sig;
         }
         JOptionPane.showInputDialog(null, "SOCIEDAD DE INGENIEROS - ORURO\n"+cad);
     }
     void mod(Ingeniero x){
-        String cad="", aux="", datosAntiguos="";
-        int matricula;
+        String cad="", aux="", datos="";
+        int mat;
         aux=JOptionPane.showInputDialog(null, "INGRESE EL NUMERO DE MATRICULA A MODIFICAR");
-        matricula=Integer.parseInt(aux);
+        mat=Integer.parseInt(aux);
         while(x!=null){
-            if(matricula==x.ma){
-                // Guardamos los datos antiguos
-                datosAntiguos="DATOS ANTIGUOS:\n";
-                datosAntiguos+="MATRICULA: "+x.ma+"\n";
-                datosAntiguos+="NOMBRE: "+x.nom+"\n";
-                datosAntiguos+="DIRECCION: "+x.dir+"\n";
-                datosAntiguos+="ESPECIALIDAD: "+x.esp+"\n";
-                datosAntiguos+="CELULAR: "+x.cel+"\n";
-                datosAntiguos+="GRADO: "+x.gr+"\n\n";
-                
-                // Modificamos los datos
+            if(mat==x.ma){
+                datos="DATOS ANTIGUOS:\n";
+                datos+="MATRICULA: "+x.ma+"\n";
+                datos+="NOMBRE: "+x.nom+"\n";
+                datos+="DIRECCION: "+x.dir+"\n";
+                datos+="ESPECIALIDAD: "+x.esp+"\n";
+                datos+="CELULAR: "+x.cel+"\n";
+                datos+="GRADO: "+x.gr+"\n\n";
                 x.nom=JOptionPane.showInputDialog(null, "INGRESE EL NUEVO NOMBRE");
                 x.dir=JOptionPane.showInputDialog(null, "INGRESE LA NUEVA DIRECCION");
                 x.esp=JOptionPane.showInputDialog(null, "INGRESE LA NUEVA ESPECIALIDAD");
                 x.cel=Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE EL NUEVO NUMERO DE CELULAR"));
                 x.gr=JOptionPane.showInputDialog(null, "INGRESE EL NUEVO GRADO");
-                
-                // Preparamos los datos actualizados
-                cad="DATOS ACTUALIZADOS A:\n";
-                cad+="MATRICULA: "+x.ma+"\n";
-                cad+="NOMBRE: "+x.nom+"\n";
-                cad+="DIRECCION: "+x.dir+"\n";
-                cad+="ESPECIALIDAD: "+x.esp+"\n";
-                cad+="CELULAR: "+x.cel+"\n";
-                cad+="GRADO: "+x.gr+"\n";
+                cad+="DATOS ACTUALIZADOS A:\n"+"MATRICULA: "+x.ma+"\n"+"NOMBRE: "+x.nom+"\n"+"DIRECCION: "+x.dir+"\n"+"ESPECIALIDAD: "+x.esp+"\n"+"CELULAR: "+x.cel+"\n"+"GRADO: "+x.gr+"\n";
             }
             x=x.sig;
         }
-        JOptionPane.showMessageDialog(null, "SOCIEDAD DE INGENIEROS - ORURO\n"+datosAntiguos+cad);
+        JOptionPane.showMessageDialog(null, "SOCIEDAD DE INGENIEROS - ORURO\n"+datos+cad);
     }
 }

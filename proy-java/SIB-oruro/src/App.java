@@ -22,7 +22,7 @@ public class App {
                 case 6: sis.mod(p);
                     break;
                 case 7:
-                    JOptionPane.showMessageDialog(null, "GRACIAS POR USAR NUESTRO PROGRAMA");
+                    JOptionPane.showMessageDialog(null, "SOCIEDAD DE INGENIEROS - ORURO\n");
                     break;
             }            
         } while(op!=7);
