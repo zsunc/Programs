@@ -6,7 +6,7 @@ String nom,dir;
 float suel;
 //nom=20, dir=25, int= 4,4,4 float 4 = 40+50+4+4+4+4 = 106 
     void abrir() throws IOException{
-        archi=new RandomAccessFile("E:/proyects/EMPRESA/EMPLEADO.txt","rw");
+        archi=new RandomAccessFile("../Empresa/data/EMPLEADO.txt","rw");
     }
     String leer_cad (int longitud) throws IOException{
         int i;
